@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ToDoListSpring
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/todo_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
