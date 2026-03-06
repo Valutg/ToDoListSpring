@@ -8,18 +8,19 @@ import java.time.LocalDate;
 import valut.spring_framework_test.todolistspring.task.model.TaskStatus;
 
 public record UpdateTaskRequest(
-        @NotBlank(message = "Название не должно быть пустым")
-        @Size(max = 255, message = "Название должно содержать не более 255 символов")
+        @NotBlank
+        @Size(max = 255)
         String title,
 
-        @Size(max = 2000, message = "Описание должно содержать не более 2000 символов")
+        @Size(max = 2000)
         String description,
 
-        @NotNull(message = "Срок выполнения обязателен")
-        @FutureOrPresent(message = "Срок выполнения не может быть в прошлом")
+
+        @NotNull
+        @FutureOrPresent
         LocalDate dueDate,
 
-        @NotNull(message = "Статус обязателен")
+        @NotNull
         TaskStatus status
 ) {
 }
